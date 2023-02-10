@@ -1,6 +1,6 @@
 local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
 
-local Main = library:CreateWindow("Main","Crimson")
+local Main = library:CreateWindow("Zze Hub Blox Fruit",)
 
 local tab = Main:CreateTab("Cheats")
 
