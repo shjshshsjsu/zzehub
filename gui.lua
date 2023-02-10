@@ -1,10 +1,10 @@
 local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
 
-local Main = library:CreateWindow("Zze Hub Blox Fruit",)
+local Main = library:CreateWindow("ZzeHub",)
 
-local tab = Main:CreateTab("Cheats")
+local tab = ZzeHub:CreateTab("Cheats")
 
-local tab2 = Main:CreateTab("Misc")
+local tab2 = ZzeHub:CreateTab("Misc")
 
 tab:CreateButton("Hi",function()
 
