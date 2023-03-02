@@ -24,6 +24,8 @@ local TextLabel_5 = Instance.new("TextLabel")
 
 local Chat = Instance.new("TextButton")
 
+local TextLabel_6 = Instance.new("TextLabel")
+
 IGNOREIFINANTIEXPLOIT.Name = "IGNORE IF IN ANTI EXPLOIT"
 
 IGNOREIFINANTIEXPLOIT.Parent = game.CoreGui
@@ -297,6 +299,88 @@ local A_2 = "All"
 local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
 
 Event:FireServer(A_1, A_2)
+
+TextLabel_6.Parent = Frame
+
+
+
+
+
+
+
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+
+
+
+
+
+
+TextLabel_6.BorderSizePixel = 0
+
+
+
+
+
+
+
+TextLabel_6.Position = UDim2.new(0, 0, 0.126050428, 0)
+
+
+
+
+
+
+
+TextLabel_6.Size = UDim2.new(0, 238, 0, 5)
+
+
+
+
+
+
+
+TextLabel_6.Font = Enum.Font.Creepster
+
+
+
+
+
+
+
+TextLabel_6.Text = "Gui By Wreston"
+
+
+
+
+
+
+
+TextLabel_6.TextColor3 = Color3.fromRGB(255, 0, 127)
+
+
+
+
+
+
+
+TextLabel_6.TextScaled = true
+
+
+
+
+
+
+
+TextLabel_6.TextSize = 14.000
+
+
+
+
+
+
+
+TextLabel_6.TextWrapped = true
 
 end)
 
