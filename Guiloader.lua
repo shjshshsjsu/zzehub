@@ -332,7 +332,7 @@ TextLabel_6.Position = UDim2.new(0, 0, 0.126050428, 0)
 
 
 
-TextLabel_6.Size = UDim2.new(0, 238, 0, 5)
+TextLabel_6.Size = UDim2.new(1, 238, 0, 5)
 
 
 
@@ -372,7 +372,7 @@ TextLabel_6.TextScaled = true
 
 
 
-TextLabel_6.TextSize = 14.000
+TextLabel_6.TextSize = 20.000
 
 
 
