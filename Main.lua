@@ -2,17 +2,17 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shle
 
 local Window = Rayfield:CreateWindow({
 
-	Name = "Rayfield Example Window",	LoadingTitle = "Rayfield Interface Suite",
+	Name = "My Restaurant",	LoadingTitle = "My Restaurant Pro Script",
 
-	LoadingSubtitle = "by Sirius",
+	LoadingSubtitle = "by Wreston",
 
 	ConfigurationSaving = {
 
 		Enabled = true,
 
-		FolderName = "Rayfield Interface Suite",
+		FolderName = "My Restaurant Script",
 
-		FileName = "Big Hub"
+		FileName = "Wreston Hub"
 
 	},
 
@@ -20,15 +20,15 @@ local Window = Rayfield:CreateWindow({
 
 	KeySettings = {
 
-		Title = "Sirius Hub",
+		Title = "Wreston Hub",
 
 		Subtitle = "Key System",
 
-		Note = "Join the discord (discord.gg/sirius)",
+		Note = "Youtube Wreston",
 
 		SaveKey = true,
 
-		Key = "ABCDEF"
+		Key = "freekey"
 
 	}
 
