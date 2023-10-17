@@ -1,193 +1,55 @@
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
-
-local Window = Rayfield:CreateWindow({
-
-	Name = "My Restaurant",	LoadingTitle = "My Restaurant Pro Script",
-
-	LoadingSubtitle = "by Wreston",
-
-	ConfigurationSaving = {
-
-		Enabled = true,
-
-		FolderName = "My Restaurant Script",
-
-		FileName = "Wreston Hub"
-
-	},
-
-	KeySystem = false, -- Set this to true to use their key system
-
-	KeySettings = {
-
-		Title = "Wreston Hub",
-
-		Subtitle = "Key System",
-
-		Note = "Youtube Wreston",
-
-		SaveKey = true,
-
-		Key = "freekey"
-
-	}
-
-})
-
-Rayfield:Notify("Title Example", "Content/Description Example", 4483362458) -- Notfication -- Title, Content, Image
-
-local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
-
-local Section = Tab:CreateSection("Section Example")
-
-local Button = Tab:CreateButton({
-
-	Name = "Button Example",
-
-	Callback = function()
-
-		-- The function that takes place when the button is pressed
-
-	end,
-
-})
-
-local Toggle = Tab:CreateToggle({
-
-	Name = "Toggle Example",
-
-	CurrentValue = false,
-
-	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-
-	Callback = function(Value)
-
-		-- The function that takes place when the toggle is pressed
-
-    		-- The variable (Value) is a boolean on whether the toggle is true or false
-
-	end,
-
-})
-
-local Slider = Tab:CreateSlider({
-
-	Name = "Slider Example",
-
-	Range = {0, 100},
-
-	Increment = 10,
-
-	Suffix = "Bananas",
-
-	CurrentValue = 10,
-
-	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-
-	Callback = function(Value)
-
-		-- The function that takes place when the slider changes
-
-    		-- The variable (Value) is a number which correlates to the value the slider is currently at
-
-	end,
-
-})
-
-local Label = Tab:CreateLabel("Label Example")
-
-local Paragraph = Tab:CreateParagraph({Title = "Paragraph Example", Content = "Paragraph Example"})
-
-local Input = Tab:CreateInput({
-
-	Name = "Input Example",
-
-	PlaceholderText = "Input Placeholder",
-
-	RemoveTextAfterFocusLost = false,
-
-	Callback = function(Text)
-
-		-- The function that takes place when the input is changed
-
-    		-- The variable (Text) is a string for the value in the text box
-
-	end,
-
-})
-
-local Keybind = Tab:CreateKeybind({
-
-	Name = "Keybind Example",
-
-	CurrentKeybind = "Q",
-
-	HoldToInteract = false,
-
-	Flag = "Keybind1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-
-	Callback = function(Keybind)
-
-		-- The function that takes place when the keybind is pressed
-
-    		-- The variable (Keybind) is a boolean for whether the keybind is being held or not (HoldToInteract needs to be true)
-
-	end,
-
-})
-
-local Dropdown = Tab:CreateDropdown({
-
-	Name = "Dropdown Example",
-
-	Options = {"Option 1","Option 2"},
-
-	CurrentOption = "Option 1",
-
-	Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-
-	Callback = function(Option)
-
-	  	  -- The function that takes place when the selected option is changed
-
-    	  -- The variable (Option) is a string for the value that the dropdown was changed to
-
-	end,
-
-})
-
-local Button = Tab:CreateButton({
-
-	Name = "Destroy UI",
-
-	Callback = function()
-
-		Rayfield:Destroy()
-
-	end,
-
-})
-
--- Extras
-
--- getgenv().SecureMode = true -- Only Set To True If Games Are Detecting/Crashing The UI
-
--- Rayfield:Destroy() -- Destroys UI
-
--- Rayfield:LoadConfiguration() -- Enables Configuration Saving
-
--- Section:Set("Section Example") -- Use To Update Section Text
-
--- Button:Set("Button Example") -- Use To Update Button Text
-
--- Toggle:Set(false) -- Use To Update Toggle
-
--- Slider:Set(10) -- Use To Update Slider Value
-
--- Label:Set("Label Example") -- Use To Update Label Text
-
--- Paragraph:Set({Title = "Paragraph Example", Content = "Paragraph Example"}) -- Use To Update Paragraph Text
-
--- Keybind:Set("RightCtrl") -- Keybind (string) -- Use To Update Keybind
-
--- Dropdown:Set("Option 2") -- The new option value -- Use To Update
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+local main = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local EnableReach = Instance.new("TextButton")
+
+
+main.Name = "main"
+main.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+main.ResetOnSpawn = false
+main.IgnoreGuiInset = true -- Ekran kenarlarını dikkate alma
+main.DisplayOrder = 999 -- Ekran düzenleme sırası
+
+
+Frame.Parent = main
+Frame.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.Position = UDim2.new(0.100320168, 0, 0.379746825, 0)
+Frame.Size = UDim2.new(0.5, 0, 0.5, 0)
+
+
+local function updateInput(input)
+    local delta = input.Position - dragStart
+    Frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+Frame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = Frame.Position
+
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+Frame.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        updateInput(input)
+    end
+end)
