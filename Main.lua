@@ -36,6 +36,17 @@ AutoParry.TextColor3 = Color3.fromRGB(0, 0, 0)
 AutoParry.TextScaled = true
 AutoParry.TextWrapped = true
 
+AutoClick.Name = "AutoClick"
+AutoClick.Parent = Frame
+AutoClick.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
+AutoClick.Size = UDim2.new(0, 55, 0, 55)
+AutoClick.Font = Enum.Font.SourceSans
+AutoClick.Text = "3 Stud"
+AutoClick.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoClick.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoClick.TextScaled = true
+AutoClick.TextWrapped = true 
+
 AutoParry.MouseButton1Click:Connect(function()
 
     end)
