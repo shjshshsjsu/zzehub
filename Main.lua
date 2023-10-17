@@ -6,7 +6,7 @@ local startPos
 local main = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local AutoParry = Instance.new("TextButton")
-
+local AutoClick = Instance.new("TextButton")
 
 main.Name = "main"
 main.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
