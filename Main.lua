@@ -51,6 +51,11 @@ AutoClick.TextScaled = true
 AutoClick.TextWrapped = true 
 
 AutoParry.MouseButton1Click:Connect(function()
+RunSteppedMobile = game:GetService("RunService").RenderStepped:Connect(function()
+if game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R6 then
+if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - game.Workspace.TPSSystem.TPS.Position).Magnitude <= DistanceReachMobile then
+
+
 
     end)
 
