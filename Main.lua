@@ -5,7 +5,7 @@ local startPos
 
 local main = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
-local EnableReach = Instance.new("TextButton")
+local AutoParry = Instance.new("TextButton")
 
 
 main.Name = "main"
@@ -22,6 +22,16 @@ Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.Position = UDim2.new(0.100320168, 0, 0.379746825, 0)
 Frame.Size = UDim2.new(0.5, 0, 0.5, 0)
 
+AutoParry.Name = "AutoParry"
+AutoParry.Parent = Frame
+AutoParry.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
+AutoParry.Size = UDim2.new(0, 55, 0, 55)
+AutoParry.Font = Enum.Font.SourceSans
+AutoParry.Text = "Enable Reach"
+AutoParry.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoParry.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoParry.TextScaled = true
+AutoParry.TextWrapped = true
 
 local function updateInput(input)
     local delta = input.Position - dragStart
