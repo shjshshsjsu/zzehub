@@ -3,6 +3,9 @@ local dragInput
 local dragStart
 local startPos
 
+AutoParry.Position = UDim2.new(0, 0, 0, 0)
+AutoClick.Position = UDim2.new(0, 110, 0, 0)
+
 local main = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local AutoParry = Instance.new("TextButton")
