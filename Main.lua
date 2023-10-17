@@ -55,7 +55,7 @@ AutoParry.MouseButton1Click:Connect(function()
     end)
 
 AutoClick.MouseButton1Click:Connect(function()
-
+    DistanceReachMobile = 3
     end)
 
 local function updateInput(input)
