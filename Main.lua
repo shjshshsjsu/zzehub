@@ -3,6 +3,9 @@ local dragInput
 local dragStart
 local startPos
 
+
+    DistanceReachMobile = 0
+
 AutoParry.Position = UDim2.new(0, 0, 0, 0)
 AutoClick.Position = UDim2.new(0, 110, 0, 0)
 
