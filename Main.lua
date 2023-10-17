@@ -36,6 +36,14 @@ AutoParry.TextColor3 = Color3.fromRGB(0, 0, 0)
 AutoParry.TextScaled = true
 AutoParry.TextWrapped = true
 
+AutoParry.MouseButton1Click:Connect(function()
+
+    end)
+
+AutoClick.MouseButton1Click:Connect(function()
+
+    end)
+
 local function updateInput(input)
     local delta = input.Position - dragStart
     Frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
